@@ -1,41 +1,15 @@
-.App {
-  text-align: center;
+html {
+  background-size: cover;
+  background-image: url("https://s3-alpha-sig.figma.com/img/a988/661c/2a997b4837d5d433e009660ffbb08433?Expires=1679875200&Signature=nH1zcKHZEi6SmQXzJwzS99BWbdq3BlImRErasEDBg1UJwZ1pAJ9AiKgUJwkrr7~iqhPN3GEaa0mVgokz-DGaVb5VuiNhLACYsNVli69jr3I~FlSUoWpefr5BLYRM0oyXZl-cqkfVFdkzZ2kv-MDt5Rhw9ICuJqF8Vj0ZNsPWs6~i6BjaGdUZUSdd2nSHSUIo8ZM5EoJ76uDKGobzaKfmgZAsWvgPwCvtrMe108TGlmoVrSB4d35wmNa9Ghjhoh0RatiBfOEn57SX79H6yWnOeFQeeR4cm8-jeGWVuzuabCXyfxq0Q4Du~Q6tlBHeVL-LOATIo1H2GbNomKEWwEdh8g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media ( prefers-reduced-motion : no-preference ) {
-
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  align-items: center;
-  background-color: #282c34;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+html::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(47, 193, 140, 0.5); /* cor semi-transparente */
+  z-index: -1;
 }
