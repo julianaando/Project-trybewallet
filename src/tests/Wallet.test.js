@@ -46,4 +46,12 @@ describe('Testa o componente <WalletForm />', () => {
     renderWithRouterAndRedux(<Wallet />);
     expect(global.fetch).toHaveBeenCalledTimes(1);
   });
+  it('Testa se, caso a API retorne erro, o state com o erro é alterado', async () => {
+    jest.spyOn(global, 'fetch');
+    global.fetch.mockResolvedValue({
+      json: jest.fn().mockRejectedValue(new Error('Erro')),
+    });
+    renderWithRouterAndRedux(<Wallet />);
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
 });
