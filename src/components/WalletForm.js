@@ -36,7 +36,7 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { currencies, history } = this.props;
+    const { currencies } = this.props;
     const { value, description, method, currency, tag } = this.state;
     return (
       <form
@@ -112,7 +112,6 @@ class WalletForm extends Component {
         <button
           type="submit"
           data-testid="submit-btn"
-          onClick={ () => history.push('/tabela') }
         >
           Adicionar despesa
 
