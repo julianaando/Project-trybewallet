@@ -82,7 +82,11 @@ class Login extends Component {
           />
         </label>
 
-        <button type="submit" disabled={ !isEmailValid || !isPasswordValid }>
+        <button
+          type="submit"
+          data-testid="login-submit-btn"
+          disabled={ !isEmailValid || !isPasswordValid }
+        >
           Entrar
         </button>
       </form>

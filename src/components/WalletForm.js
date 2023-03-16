@@ -36,11 +36,12 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { currencies } = this.props;
+    const { currencies, history } = this.props;
     const { value, description, method, currency, tag } = this.state;
     return (
       <form
         onSubmit={ this.handleSubmitAdd }
+        data-testid="form-expense"
       >
         <label htmlFor="value">
           Valor:
@@ -110,6 +111,8 @@ class WalletForm extends Component {
         </label>
         <button
           type="submit"
+          data-testid="submit-btn"
+          onClick={ () => history.push('/tabela') }
         >
           Adicionar despesa
 
@@ -127,6 +130,9 @@ const mapStateToProps = (state) => ({
 WalletForm.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
   dispatch: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default connect(mapStateToProps)(WalletForm);
