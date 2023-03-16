@@ -8,7 +8,7 @@ const mockData = {
     varBid: '0.0234',
     pctChange: '0.49',
     bid: '4.7526',
-    ask: '4.7531',
+    ask: '4.7532',
     timestamp: '1653943661',
     create_date: '2022-05-30 17:47:41',
   },
