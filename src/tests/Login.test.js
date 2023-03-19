@@ -1,7 +1,7 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithRedux, renderWithRouterAndRedux } from './helpers/renderWith';
+import { renderWithRouterAndRedux } from './helpers/renderWith';
 import Login from '../pages/Login';
 import App from '../App';
 

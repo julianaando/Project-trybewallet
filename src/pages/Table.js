@@ -17,6 +17,11 @@ Utilize sempre o formato 0.00 (número - ponto - duas casas decimais).
  */
 
 class Table extends Component {
+  deleteExpense = (id) => {
+    const { dispatch } = this.props;
+    dispatch(deleteExpense(id));
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -49,8 +54,21 @@ class Table extends Component {
               </td>
               <td>Real</td>
               <td>
-                <button type="button">Editar</button>
-                <button type="button">Excluir</button>
+                <button
+                  type="button"
+                  data-testid="edit-btn"
+                >
+                  Editar
+
+                </button>
+                <button
+                  type="button"
+                  data-testid="delete-btn"
+                  onClick={ () => this.deleteExpense(expense.id) }
+                >
+                  Excluir
+
+                </button>
               </td>
             </tr>
           ))}
@@ -82,6 +100,7 @@ Table.propTypes = {
       create_date: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

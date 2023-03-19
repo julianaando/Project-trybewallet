@@ -1,6 +1,7 @@
 export const REQUEST_KEYS_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
 export const REQUEST_KEYS_FAILED = 'REQUEST_FAILED';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export function requestSuccessful(currencies) { // função que cria a action, caso a requisição seja bem sucedida
   return {
@@ -29,6 +30,15 @@ export function addExpense(state, exchangeRates) { // cria a action que contém 
       tag,
       description,
       exchangeRates, // objeto contendo as taxas de conversão
+    },
+  };
+}
+
+export function deleteExpense(id) {
+  return {
+    type: DELETE_EXPENSE,
+    payload: {
+      id,
     },
   };
 }
