@@ -63,7 +63,7 @@ describe('Testa o componente <WalletForm />', () => {
       json: jest.fn().mockResolvedValue(mockData),
     });
     renderWithRouterAndRedux(<Wallet />);
-    
+
     const description = await screen.findByTestId('description-input');
     userEvent.type(description, 'Teste');
 
