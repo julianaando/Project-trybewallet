@@ -17,11 +17,6 @@ Utilize sempre o formato 0.00 (número - ponto - duas casas decimais).
  */
 
 class Table extends Component {
-  deleteExpense = (id) => {
-    const { dispatch } = this.props;
-    dispatch(deleteExpense(id));
-  };
-
   render() {
     const { expenses } = this.props;
     return (
@@ -64,7 +59,6 @@ class Table extends Component {
                 <button
                   type="button"
                   data-testid="delete-btn"
-                  onClick={ () => this.deleteExpense(expense.id) }
                 >
                   Excluir
 
@@ -100,7 +94,6 @@ Table.propTypes = {
       create_date: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
