@@ -7,7 +7,7 @@ import App from '../App';
 
 describe('Testa o componente <Login />', () => {
   it('Testa se os inputs de email, senha e botão estão renderizados na tela', () => {
-    renderWithRedux(<Login />);
+    renderWithRouterAndRedux(<Login />);
     const emailInput = screen.getByLabelText(/Email/i);
     const passwordInput = screen.getByLabelText(/Senha/i);
     const submitButton = screen.getByRole('button');
@@ -16,12 +16,12 @@ describe('Testa o componente <Login />', () => {
     expect(submitButton).toBeInTheDocument();
   });
   it('Testa se o botão de login está desabilitado quando os campos de email e senha não estão preenchidos', () => {
-    renderWithRedux(<Login />);
+    renderWithRouterAndRedux(<Login />);
     const submitButton = screen.getByTestId('login-submit-btn');
     expect(submitButton).toBeDisabled();
   });
   it('Testa se o botão de login está habilitado quando os campos de email e senha estão preenchidos', () => {
-    renderWithRedux(<Login />);
+    renderWithRouterAndRedux(<Login />);
     const emailInput = screen.getByTestId('email-input');
     const passwordInput = screen.getByTestId('password-input');
     const submitButton = screen.getByTestId('login-submit-btn');

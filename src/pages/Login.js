@@ -47,7 +47,7 @@ class Login extends Component {
       });
       break;
     default:
-      break;
+      return null;
     }
   };
 
