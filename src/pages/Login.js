@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import '../css/login.css';
 
 class Login extends Component {
   state = {
@@ -24,7 +25,6 @@ class Login extends Component {
     event.preventDefault();
     const { email } = this.state;
     const { history, dispatch } = this.props;
-    // TODO: salvar no state global usando o reducer
     dispatch({ type: 'LOGIN', email });
     history.push('/carteira');
     this.setState({ email: '' });
@@ -55,35 +55,33 @@ class Login extends Component {
     const { email, password, isEmailValid, isPasswordValid } = this.state;
 
     return (
-      <form onSubmit={ this.handleSubmit }>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="email"
-            id="email"
-            name="email"
-            data-testid="email-input"
-            value={ email }
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-
-        <label htmlFor="password">
-          Senha:
-          <input
-            type="password"
-            id="password"
-            name="password"
-            data-testid="password-input"
-            value={ password }
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
+      <form onSubmit={ this.handleSubmit } className="form">
+        <input
+          type="email"
+          className="input"
+          placeholder="Email"
+          id="email"
+          name="email"
+          data-testid="email-input"
+          value={ email }
+          onChange={ this.handleChange }
+          required
+        />
+        <input
+          type="password"
+          className="input"
+          id="password"
+          placeholder="Senha"
+          name="password"
+          data-testid="password-input"
+          value={ password }
+          onChange={ this.handleChange }
+          required
+        />
 
         <button
           type="submit"
+          className="btn-login"
           data-testid="login-submit-btn"
           disabled={ !isEmailValid || !isPasswordValid }
         >

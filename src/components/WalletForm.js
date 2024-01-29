@@ -26,8 +26,8 @@ class WalletForm extends Component {
   handleSubmitAdd = async (event) => {
     event.preventDefault();
     const { dispatch } = this.props;
-    const response = await fetch('https://economia.awesomeapi.com.br/json/all'); // faz a requisição
-    const exchangeRates = await response.json(); // transforma a resposta em json
+    const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const exchangeRates = await response.json();
     dispatch(addExpense(this.state, exchangeRates));
     this.setState({
       value: '',

@@ -2,20 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-/*
-A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses
-que vem do reducer wallet:
-O campo de Moeda deverá conter o nome da moeda.
-Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Americano/Real Brasileiro" e "Euro/Real Brasileiro", respectivamente;
-O elemento que exibe a Moeda de conversão deverá ser sempre 'Real';
-Atenção também às casas decimais dos campos.
-Como são valores contábeis, eles devem apresentar duas casas após o ponto.
-Arredonde sua resposta somente na hora de renderizar o resultado e, para os cálculos,
-utilize sempre os valores vindos da API (utilize o campo ask que vem da API).
-Utilize sempre o formato 0.00 (número - ponto - duas casas decimais).
-9 <td> e 1 <tr> para cada despesa.
- */
-
 class Table extends Component {
   render() {
     const { expenses } = this.props;
